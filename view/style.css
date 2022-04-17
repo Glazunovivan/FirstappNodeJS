@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body,html{
+    overflow-x: hidden;
+}
+nav{
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+}
+#checkbox-menu,
+.toggle{
+    display: none;
+}
+.menu{
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+.menu li a{
+    color: black;
+    text-decoration: none;
+    align-self: center;
+    font-size: 13px;
+    padding: 10px 15px;
+    transition: background .2s linear;
+}
+.menu li a:hover{
+    background: #ffcc01;
+    border-radius: 3px;
+}
+
+.menu li a.logo{
+    font-size: 30px;
+    margin-right: 100px;
+}
+
+@media screen and (max-width: 800px){
+    .toggle{
+        clear: both;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        width: 100%;
+        color:black;
+        background: #ffcc01;
+        transition: all .1s linear;
+    }
+
+    .toggle:hover{
+        background: #d3a900;
+
+    }
+    #checkbox-menu:checked + label .touch li{
+        opacity: 1;
+        visibility: visible;
+        transition: all .7s linear;
+    }
+    #checkbox-menu:checked + label .touch{
+        height: 350px;
+
+    }
+    .menu{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 0;
+        transition: height .3s linear;
+    }
+    .menu li{
+        display: flex;
+        align-self: center;
+        width: 85px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .menu li a{
+        width: 95%;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+    }
+}
